@@ -1,0 +1,11 @@
+@import '@fontsource-variable/bricolage-grotesque/index.css';
+@import '@fontsource/crimson-pro/400.css';
+@import '@fontsource/crimson-pro/600.css';
+@import '@fontsource/frank-ruhl-libre/400.css';
+@import '@fontsource/frank-ruhl-libre/700.css';
+
+:root {
+  --font-sans: 'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: 'Crimson Pro', 'Times New Roman', serif;
+  --font-display: 'Frank Ruhl Libre', 'Times New Roman', serif;
+}
