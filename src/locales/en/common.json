@@ -1,0 +1,22 @@
+{
+  "app": {
+    "title": "Fair Play",
+    "tagline": "Playful equity experiments",
+    "subtitle": "Design fair game loops and evaluate outcomes in real time.",
+    "version": "v0.1 beta"
+  },
+  "actions": {
+    "start": "Start session",
+    "reset": "Reset progress",
+    "toggleLang": "Switch to {{lang}}"
+  },
+  "game": {
+    "progressTitle": "Session progress",
+    "level": "Level",
+    "score": "Score",
+    "streakTitle": "Momentum",
+    "streakDescription": "You have advanced {{count}} steps in a row.",
+    "historyTitle": "Recent sessions",
+    "historyScore": "Score {{score}} · Level {{level}}"
+  }
+}

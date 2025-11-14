@@ -1,0 +1,22 @@
+{
+  "app": {
+    "title": "משחק הוגן",
+    "tagline": "ניסויי הוגנות משחקיים",
+    "subtitle": "עצבו לופים הוגנים ובחנו תוצאות בזמן אמת.",
+    "version": "גרסה 0.1 בטא"
+  },
+  "actions": {
+    "start": "התחלת סשן",
+    "reset": "איפוס התקדמות",
+    "toggleLang": "החלפה ל{{lang}}"
+  },
+  "game": {
+    "progressTitle": "התקדמות הסשן",
+    "level": "שלב",
+    "score": "ניקוד",
+    "streakTitle": "תנופה",
+    "streakDescription": "התקדמתם {{count}} צעדים ברצף.",
+    "historyTitle": "סשנים אחרונים",
+    "historyScore": "ניקוד {{score}} · שלב {{level}}"
+  }
+}
