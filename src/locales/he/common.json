@@ -18,5 +18,61 @@
     "streakDescription": "התקדמתם {{count}} צעדים ברצף.",
     "historyTitle": "סשנים אחרונים",
     "historyScore": "ניקוד {{score}} · שלב {{level}}"
+  },
+  "board": {
+    "deck": "חפיסה חיה",
+    "unassignedTitle": "קלפים פנויים",
+    "unassignedDescription": "מרחב לקלפים שממתינים לחלוקה.",
+    "unassignedHeading": "זמינים עכשיו",
+    "unassignedSubtitle": "{{count}} קלפים מוכנים",
+    "emptyDeck": "כל האחריות מחולקת כרגע. קחו נשימה.",
+    "assignTo": "העברה ל{{name}}",
+    "dealCardTitle": "חלוקת החפיסה",
+    "dealCardDescription": "ערבבו וחלקו את העומס הביתי בקצב מודע.",
+    "totalCards": "סה\"כ קלפים",
+    "unassignedLabel": "לא משויך",
+    "pausedLabel": "בהשהיה",
+    "totalTime": "סה\"כ זמן",
+    "timeLabel": "זמן משוער",
+    "timeEstimate": "{{minutes}} דק'",
+    "timeEstimateHours": "{{hours}}ש {{minutes}}דק",
+    "difficultyLabel": "רמת קושי {{level}}",
+    "difficulty": {
+      "1": "קליל",
+      "2": "ממוקד",
+      "3": "מאומץ"
+    },
+    "status": {
+      "paused": "בהשהיה",
+      "negotiation": "במו\"מ",
+      "shared": "משותף"
+    },
+    "frequency": {
+      "daily": "קצב יומי",
+      "weekly": "קצב שבועי",
+      "monthly": "קצב חודשי",
+      "occasional": "מדי פעם"
+    },
+    "categories": {
+      "daily-grind": "שגרה יומיומית",
+      "kids": "ילדים",
+      "home": "בית",
+      "magic": "קסם",
+      "wild": "חופש",
+      "custom": "מותאם"
+    },
+    "partnerTime": "העומס של {{partner}}",
+    "deckStatus": "חפיסה של {{total}}",
+    "unassignedCount": "{{count}} פנויים",
+    "shuffleDeck": "ערבוב",
+    "dealEvenly": "חלוקה הוגנת",
+    "emptyPartner": "ל{{name}} אין קלפים פעילים כרגע.",
+    "partnerStackTitle": "הקלפים של {{name}}",
+    "partnerStackSubtitle": "{{active}} פעילים · {{paused}} בהשהיה",
+    "returnCard": "החזרה לחפיסה",
+    "pauseCard": "השהיה",
+    "resumeCard": "חזרה לפעילות",
+    "cardsAssigned": "{{count}} קלפים",
+    "partnerIcon": "אייקון {{icon}}"
   }
 }

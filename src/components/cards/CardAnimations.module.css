@@ -1,0 +1,202 @@
+.card {
+  position: relative;
+  border-radius: 28px;
+  padding: 1.75rem;
+  background: linear-gradient(135deg, rgba(251, 245, 243, 0.95), rgba(235, 227, 222, 0.9));
+  box-shadow:
+    0 24px 60px -32px rgba(10, 9, 8, 0.45),
+    inset 0 0 0 1px rgba(10, 9, 8, 0.08);
+  color: #0f0e0c;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease;
+  clip-path: polygon(0% 6%, 6% 0%, 94% 2%, 100% 10%, 100% 94%, 93% 100%, 4% 98%, 0% 92%);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: -40% -20%;
+  background-image: var(--card-pattern, radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.16), transparent 60%));
+  filter: blur(40px) saturate(110%);
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><filter id="n" x="0" y="0" width="1" height="1"><feTurbulence baseFrequency="0.9" seed="11" type="fractalNoise"/></filter><rect width="160" height="160" filter="url(%23n)" opacity="0.28"/></svg>');
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translate3d(0, -6px, 0) rotate(-0.4deg);
+  box-shadow:
+    0 32px 70px -28px rgba(10, 9, 8, 0.55),
+    inset 0 0 0 1px rgba(10, 9, 8, 0.14);
+}
+
+.cardContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  z-index: 1;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.cardHeadline {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.cardDescription {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(47, 45, 42, 0.82);
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 999px;
+  padding: 0.2rem 0.75rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(10, 9, 8, 0.08);
+  color: rgba(10, 9, 8, 0.7);
+  backdrop-filter: blur(2px);
+}
+
+.badgeStrong {
+  background: rgba(230, 57, 70, 0.12);
+  color: rgba(230, 57, 70, 0.9);
+}
+
+.badgeCool {
+  background: rgba(6, 174, 213, 0.12);
+  color: rgba(6, 174, 213, 0.9);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  color: rgba(10, 9, 8, 0.65);
+}
+
+.footer strong {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  color: rgba(10, 9, 8, 0.95);
+}
+
+.actionRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.stack {
+  position: relative;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.stackList {
+  position: relative;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.stackItem {
+  grid-area: 1 / 1;
+  transform: translate3d(calc(var(--stack-index) * -10px), calc(var(--stack-index) * 8px), 0)
+    rotate(calc(var(--stack-index) * -0.6deg));
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
+  z-index: calc(200 - var(--stack-index));
+}
+
+.stackItem:hover {
+  transform: translate3d(0, 0, 0) rotate(0deg);
+  z-index: 300;
+}
+
+.emptyState {
+  border-radius: 26px;
+  border: 1px dashed rgba(10, 9, 8, 0.18);
+  padding: 2.25rem 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(10, 9, 8, 0.6);
+  background: linear-gradient(140deg, rgba(251, 245, 243, 0.7), rgba(235, 227, 222, 0.55));
+}
+
+.dark .card {
+  background: linear-gradient(145deg, rgba(26, 24, 22, 0.92), rgba(15, 14, 12, 0.9));
+  color: rgba(250, 245, 240, 0.96);
+  box-shadow:
+    0 28px 80px -36px rgba(0, 0, 0, 0.7),
+    inset 0 0 0 1px rgba(241, 196, 83, 0.16);
+}
+
+.dark .card::after {
+  opacity: 0.35;
+}
+
+.dark .cardDescription {
+  color: rgba(232, 225, 220, 0.76);
+}
+
+.dark .badge {
+  background: rgba(241, 196, 83, 0.12);
+  color: rgba(241, 196, 83, 0.82);
+}
+
+.dark .badgeStrong {
+  background: rgba(230, 57, 70, 0.18);
+  color: rgba(230, 57, 70, 0.92);
+}
+
+.dark .badgeCool {
+  background: rgba(6, 174, 213, 0.18);
+  color: rgba(156, 220, 248, 0.92);
+}
+
+.dark .footer {
+  color: rgba(240, 236, 231, 0.7);
+}
+
+.dark .footer strong {
+  color: rgba(255, 253, 250, 0.96);
+}
+
+.dark .emptyState {
+  background: linear-gradient(145deg, rgba(26, 24, 22, 0.88), rgba(12, 11, 10, 0.85));
+  border-color: rgba(241, 196, 83, 0.22);
+  color: rgba(240, 236, 231, 0.62);
+}
