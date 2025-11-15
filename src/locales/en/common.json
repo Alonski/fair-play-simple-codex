@@ -18,5 +18,61 @@
     "streakDescription": "You have advanced {{count}} steps in a row.",
     "historyTitle": "Recent sessions",
     "historyScore": "Score {{score}} · Level {{level}}"
+  },
+  "board": {
+    "deck": "Living deck",
+    "unassignedTitle": "Unassigned cards",
+    "unassignedDescription": "Hold space for cards waiting to be dealt.",
+    "unassignedHeading": "Available now",
+    "unassignedSubtitle": "{{count}} cards ready",
+    "emptyDeck": "Every responsibility is currently held. Take a breath.",
+    "assignTo": "Deal to {{name}}",
+    "dealCardTitle": "Deal the deck",
+    "dealCardDescription": "Shuffle and distribute the household load with intentional rhythm.",
+    "totalCards": "Total cards",
+    "unassignedLabel": "Unassigned",
+    "pausedLabel": "Paused",
+    "totalTime": "Total time",
+    "timeLabel": "Estimated time",
+    "timeEstimate": "{{minutes}} min",
+    "timeEstimateHours": "{{hours}}h {{minutes}}m",
+    "difficultyLabel": "Difficulty L{{level}}",
+    "difficulty": {
+      "1": "Gentle",
+      "2": "Focused",
+      "3": "Intensive"
+    },
+    "status": {
+      "paused": "Paused",
+      "negotiation": "Negotiating",
+      "shared": "Shared"
+    },
+    "frequency": {
+      "daily": "Daily rhythm",
+      "weekly": "Weekly cadence",
+      "monthly": "Monthly pulse",
+      "occasional": "Occasional spark"
+    },
+    "categories": {
+      "daily-grind": "Daily grind",
+      "kids": "Kids",
+      "home": "Home",
+      "magic": "Magic",
+      "wild": "Wild",
+      "custom": "Custom"
+    },
+    "partnerTime": "{{partner}}'s load",
+    "deckStatus": "Deck of {{total}}",
+    "unassignedCount": "Free {{count}}",
+    "shuffleDeck": "Shuffle",
+    "dealEvenly": "Fair deal",
+    "emptyPartner": "{{name}} has no active cards right now.",
+    "partnerStackTitle": "{{name}}'s cards",
+    "partnerStackSubtitle": "{{active}} active · {{paused}} paused",
+    "returnCard": "Return to deck",
+    "pauseCard": "Pause",
+    "resumeCard": "Resume",
+    "cardsAssigned": "{{count}} cards",
+    "partnerIcon": "Signature {{icon}}"
   }
 }

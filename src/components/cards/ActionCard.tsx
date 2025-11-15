@@ -13,7 +13,7 @@ export function ActionCard({ title, action, children }: ActionCardProps) {
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
     >
-      <div className="flex items-center justify-between gap-4">
+      <div className="flex items-start justify-between gap-4">
         <h2 className="font-display text-xl font-semibold text-neutral-900 dark:text-neutral-100">{title}</h2>
         <div>{action}</div>
       </div>
