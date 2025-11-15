@@ -297,6 +297,14 @@ const initialPartners: Record<PartnerId, PartnerProfile> = {
   },
 };
 
+const clone = <T,>(value: T): T => {
+  if (typeof structuredClone === 'function') {
+    return structuredClone(value);
+  }
+
+  return JSON.parse(JSON.stringify(value)) as T;
+};
+
 const cardsToDictionary = (cards: Card[]) =>
   cards.reduce<CardDictionary>((acc, card) => {
     const createdAt = card.metadata.createdAt;
@@ -320,8 +328,17 @@ const cardsToDictionary = (cards: Card[]) =>
     return acc;
   }, {});
 
-const initialCards = cardsToDictionary(baseCards);
-const initialOrder = baseCards.map((card) => card.id);
+const createInitialPartners = () => clone(initialPartners);
+
+const createInitialCards = () => cardsToDictionary(clone(baseCards));
+
+const createInitialOrder = () => baseCards.map((card) => card.id);
+
+const createInitialPersistedState = (): CardStorePersistedState => ({
+  cards: createInitialCards(),
+  order: createInitialOrder(),
+  partners: createInitialPartners(),
+});
 
 const updateCard = (card: Card, updates: Partial<Card>) => {
   const modifiedAt = now();
@@ -357,10 +374,8 @@ const shuffleArray = <T,>(input: T[]): T[] => {
 
 export const useCardStoreBase = create<CardStoreState>()(
   persist(
-    (set, _get) => ({
-      cards: initialCards,
-      order: initialOrder,
-      partners: initialPartners,
+    (set) => ({
+      ...createInitialPersistedState(),
       assignCard: (id, partner) =>
         set((state) => {
           const card = state.cards[id];
@@ -488,6 +503,22 @@ export const useCardStoreBase = create<CardStoreState>()(
     },
   ),
 );
+
+export const resetCardStore = async (options: { clearStorage?: boolean } = {}) => {
+  const { clearStorage = true } = options;
+
+  useCardStoreBase.setState(createInitialPersistedState());
+
+  const persistApi = (useCardStoreBase as typeof useCardStoreBase & {
+    persist?: {
+      clearStorage?: () => Promise<void> | void;
+    };
+  }).persist;
+
+  if (clearStorage && persistApi?.clearStorage) {
+    await persistApi.clearStorage();
+  }
+};
 
 export const selectCardsByHolder = (holder: PartnerId | null) => (state: CardStoreState) =>
   state.order
