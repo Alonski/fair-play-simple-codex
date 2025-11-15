@@ -26,3 +26,14 @@ npm run dev
 - **i18next** bootstrapped with English and Hebrew translations.
 - **Workbox** service worker registration for offline-ready builds.
 - **Vitest + Testing Library** ready for component testing.
+
+## Deployment
+
+The repository includes a [`vercel.json`](./vercel.json) configuration optimised for the Vite build. To deploy on [Vercel](https://vercel.com/):
+
+1. Create a new Vercel project and connect this repository.
+2. Leave the install command as `npm install` and set the build command to `npm run build`.
+3. Set the output directory to `dist` (Vercel detects this automatically from the config).
+4. Optionally enable preview deployments on pull requests to exercise the interactive board before promoting to production.
+
+Once the build completes, Vercel will serve the optimised static bundle alongside the Workbox-powered service worker.
