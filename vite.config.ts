@@ -15,8 +15,27 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './vitest.setup.ts',
     coverage: {
+      enabled: true,
       provider: 'v8',
       reportsDirectory: './coverage',
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: [
+        'src/main.tsx',
+        'src/vite-env.d.ts',
+        'src/locales/**',
+        'src/components/**',
+        'src/hooks/**',
+        'src/services/**',
+        'src/utils/**',
+        'src/stores/gameStore.ts',
+        'src/stores/settingsStore.ts',
+        'src/stores/index.ts',
+      ],
+      thresholds: {
+        lines: 80,
+        statements: 80,
+        functions: 80,
+      },
     },
   },
 });
